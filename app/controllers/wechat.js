@@ -24,7 +24,7 @@ router.all('/verify', function (req, res, next) {
 
    console.log(req.body);
    const {signature,timestamp,nonce,echostr} = req.query;
-    if(!signature || !timestamp || !nonce | | !echostr){
+    if(!signature || !timestamp || !nonce || !echostr){
 	return res.send("invalid request");
     }
     const params = [token,timestamp,nonce];
