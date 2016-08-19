@@ -20,8 +20,8 @@ router.get('/hello', function (req, res, next) {
 
 const token = "f9ZDwSilaZxjdGxoTQru";
 router.all('/verify', function (req, res, next) {
-   
-   console.log(req.body)
+
+   console.log(req.body);
    const {signature,timestamp,nonce,echostr} = req.query;
     if(!signature || !timestamp || !nonce || !echostr){
 	return res.send("invalid request");
