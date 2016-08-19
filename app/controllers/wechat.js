@@ -42,8 +42,8 @@ router.all('/verify', function (req, res, next) {
 
 var config = {
   token: 'f9ZDwSilaZxjdGxoTQru',
-  appid: 'wxafed8a848cc36bd4',
-  encodingAESKey: 'pSMguOgOCHMPoFbaPIEmqqcf7XxBfoudGfOAUxQAjAF'
+  appid: 'c97cebc5ffcd8e5726cd7318706bfbf4',
+  //encodingAESKey: 'pSMguOgOCHMPoFbaPIEmqqcf7XxBfoudGfOAUxQAjAF'
 };
 
 const handleWechatRequest = wechat(config, function (req, res, next) {
