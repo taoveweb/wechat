@@ -3,8 +3,8 @@ var express = require('express'),
   crypto = require('crypto'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  Conversation = mongoose.model('Conversation'),
-  wechat = require("wechat");
+  Conversation = mongoose.model('Conversation');
+  var wechat = require('wechat');
 
 module.exports = function (app) {
   app.use('/wechat/', router);
@@ -46,7 +46,7 @@ var config = {
   encodingAESKey: 'pSMguOgOCHMPoFbaPIEmqqcf7XxBfoudGfOAUxQAjAF'
 };
 
-const handleWechatRequest = wechat(config,wechat(config, function (req, res, next) {
+const handleWechatRequest = wechat(config, function (req, res, next) {
   // 微信输入信息都在req.weixin上
   var message = req.weixin;
   if (message.FromUserName === 'diaosi') {
@@ -81,6 +81,6 @@ const handleWechatRequest = wechat(config,wechat(config, function (req, res, nex
       }
     ]);
   }
-}));
+});
 router.all("/conversation",handleWechatRequest);
 //router.post("/conversation",handleWechatRequest);
