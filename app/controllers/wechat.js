@@ -2,7 +2,8 @@ var express = require('express'),
   router = express.Router(),
   crypto = require('crypto'),
   mongoose = require('mongoose'),
-  Article = mongoose.model('Article'),
+  User = mongoose.model('User'),
+  Conversation = mongoose.model('Conversation'),
   wechat = require("wechat");
 
 module.exports = function (app) {
@@ -10,7 +11,7 @@ module.exports = function (app) {
 };
 
 router.get('/hello', function (req, res, next) {
-  Article.find(function (err, articles) {
+  User.find(function (err, articles) {
     if (err) return next(err);
     res.render('index', {
       title: 'Generator-Express MVC',
